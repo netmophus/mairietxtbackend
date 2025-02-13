@@ -25,7 +25,7 @@ require("dotenv").config();
 dotenv.config();
 require('iconv-lite').encodingExists('foo'); // Charge l'encodage UTF-8
 const app = express();
-const PORT = process.env.PORT || Math.floor(10000 + Math.random() * 50000);
+const PORT = process.env.PORT || 5000;
 
 // app.listen(PORT, () => {
 //   console.log(`🚀 Serveur en ligne sur le port : ${PORT}`);
@@ -107,13 +107,7 @@ app.get('/', (req, res) => {
 
 
 
-
-app.use((req, res, next) => {
-  console.log(`📥 ${req.method} ${req.url}`);
-  next();
-});
-
-// Démarrer le serveur
-app.listen(PORT, () => {
-  console.log(`🚀 Serveur en cours d'exécution sur http://localhost:${PORT}`);
-});
+// // Démarrer le serveur
+// app.listen(PORT, () => {
+//   console.log(`🚀 Serveur en cours d'exécution sur http://localhost:${PORT}`);
+// });
