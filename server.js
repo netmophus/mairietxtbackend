@@ -26,15 +26,15 @@ dotenv.config();
 require('iconv-lite').encodingExists('foo'); // Charge l'encodage UTF-8
 const app = express();
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Serveur en ligne sur le port : ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`🚀 Serveur en ligne sur le port : ${PORT}`);
+// });
 
 
 // Middleware global
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://marietxtbackend-36943b009f4d.herokuapp.com", // Mets ici l'URL de ton frontend Heroku
+ "https://marietxtfrontend-9799da37a83c.herokuapp.com/", // URL du frontend, 
 ];
 
 app.use(cors({
@@ -52,10 +52,18 @@ app.use(express.json()); // Parser les données JSON
 
 // Connecter à MongoDB
 mongoose
-  // .connect('mongodb://127.0.0.1:27017/mairie-taxe') // Utilisation de 127.0.0.1 au lieu de localhost
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("✅ Connecté à MongoDB Atlas"))
-  .catch(err => console.error("❌ Erreur MongoDB :", err));
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("✅ Connecté à MongoDB Atlas");
+    app.listen(PORT, () => {
+      console.log(`🚀 Serveur en ligne sur le port : ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error("❌ Erreur MongoDB :", err);
+    process.exit(1); // Quitter l'application en cas d'erreur de connexion
+  });
+
 
 // Routes
 app.use('/api/auth', authRoutes); // Routes pour l'authentification
