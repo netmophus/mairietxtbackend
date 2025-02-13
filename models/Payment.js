@@ -1,17 +1,4 @@
 
-// const mongoose = require('mongoose');
-
-// const paymentSchema = new mongoose.Schema({
-//   taxpayer: { type: mongoose.Schema.Types.ObjectId, ref: 'Taxpayer', required: true }, // Contribuable
-//   collector: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Collecteur
-//   tax: { type: mongoose.Schema.Types.ObjectId, ref: 'Tax', required: true }, // Taxe
-//   amount: { type: Number, required: true }, // Montant payé
-//   paymentDate: { type: Date, default: Date.now }, // Date du paiement
-// });
-
-// module.exports = mongoose.model('Payment', paymentSchema);
-
-
 
 
 // Payment Model

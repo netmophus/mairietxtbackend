@@ -1,38 +1,3 @@
-// const mongoose = require('mongoose');
-
-// const taxpayerTaxSchema = new mongoose.Schema({
-//   taxpayer: { 
-//     type: mongoose.Schema.Types.ObjectId, 
-//     ref: 'Taxpayer', 
-//     required: true 
-//   }, // Référence au contribuable
-//   tax: { 
-//     type: mongoose.Schema.Types.ObjectId, 
-//     ref: 'Tax', 
-//     required: true 
-//   }, // Référence à la taxe
-//   remainingAmount: { 
-//     type: Number, 
-//     required: true 
-//   }, // Montant restant à payer pour cette taxe
-//   dueDate: { 
-//     type: Date, 
-//     required: true 
-//   }, // Date d'échéance de la taxe pour ce contribuable
-//   isPaid: { 
-//     type: Boolean, 
-//     default: false 
-//   }, // Indique si la taxe a été intégralement payée
-//   createdAt: { 
-//     type: Date, 
-//     default: Date.now 
-//   }, // Date de création de l'association
-// });
-
-// module.exports = mongoose.model('TaxpayerTax', taxpayerTaxSchema);
-
-
-
 
 
 

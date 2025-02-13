@@ -1,33 +1,3 @@
-// const mongoose = require('mongoose');
-
-// const taxpayerSchema = new mongoose.Schema({
-//   name: { type: String, required: true },
-//   address: { type: String, required: true },
-//   activityType: { type: String, required: true },
-//   phone: { type: String, required: true },
-//   assignedCollector: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-//   taxes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tax' }],
-//   zone: { type: mongoose.Schema.Types.ObjectId, ref: 'Zone' }, // Association à une zone
-//   status: {
-//     type: String,
-//     enum: ['active', 'overdue'],
-//     default: 'active',
-//   },
-//   coordinates: {
-//     latitude: { type: Number },
-//     longitude: { type: Number },
-//   },
-//   media: {
-//     photos: [{ type: String }],
-//     videos: [{ type: String }],
-//   },
-  
-//   createdAt: { type: Date, default: Date.now },
-// });
-
-// module.exports = mongoose.model('Taxpayer', taxpayerSchema);
-
-
 
 
 // Taxpayer Model

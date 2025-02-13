@@ -1,53 +1,6 @@
 
 
 
-
-// const mongoose = require('mongoose');
-
-// const taxSchema = new mongoose.Schema({
-//   name: { 
-//     type: String, 
-//     required: true 
-//   },
-//   description: { 
-//     type: String 
-//   },
-//   isVariable: { 
-//     type: Boolean, 
-//     default: false 
-//   },
-//   // Pour une taxe fixe, "amount" est utilisé
-//   amount: { 
-//     type: Number, 
-//     required: function() { return !this.isVariable; } 
-//   },
-//   // Pour une taxe variable comme la taxe de publicité, "rate" peut être remplacé par un ensemble de taux par support
-//   // Si on veut l'approche 2, on ajoute supportRates
-//   supportRates: {
-//     type: Object, // ou type: Map, of: Number
-//     required: function() { return this.isVariable; },
-    
-//   },
-//   frequency: { 
-//     type: String, 
-//     enum: ['monthly', 'annual'], 
-//     required: true 
-//   },
-//   dueDate: { 
-//     type: Date, 
-//     required: true 
-//   },
-//   createdAt: { 
-//     type: Date, 
-//     default: Date.now 
-//   },
-// });
-
-// module.exports = mongoose.model('Tax', taxSchema);
-
-
-
-
 const mongoose = require('mongoose');
 
 const taxSchema = new mongoose.Schema({
