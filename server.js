@@ -21,14 +21,15 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware global
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://mairietxtfrontend-faa0da7e21d3.herokuapp.com"  
+  "https://mairietxtfrontend-faa0da7e21d3.herokuapp.com",
+  "http://localhost:3000"   
 ];
 
 app.use(cors({
   origin: allowedOrigins,
-  methods: "GET,POST,PUT,DELETE",
-  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 app.use(express.json()); // Parser les données JSON
