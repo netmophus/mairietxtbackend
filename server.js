@@ -20,32 +20,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware global
-const allowedOrigins = [
-  "https://mairietxtfrontend-faa0da7e21d3.herokuapp.com",
-  "http://localhost:3000"   
-];
-
 app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  origin: [
+    'https://mairietxtfrontend-faa0da7e21d3.herokuapp.com', // URL du frontend déployé
+    'http://localhost:3000', // Pour le développement local
+    'http://localhost:3001',
+    'http://localhost:3002'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-  
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200); // Réponse immédiate pour éviter l'erreur 204
-  }
-
-  next();
-});
-
 
 app.use(express.json()); // Parser les données JSON
 
