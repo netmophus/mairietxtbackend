@@ -34,6 +34,8 @@ app.use(cors({
 
 app.use(express.json()); // Parser les données JSON
 
+app.options('*', cors());
+
 // Logger toutes les requêtes
 app.use((req, res, next) => {
   console.log(`📥 ${req.method} ${req.url}`);
